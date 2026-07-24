@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.io.*;
 
 public class customerservice {
     ArrayList<customer> customer = new ArrayList<customer>();
@@ -16,10 +17,26 @@ public class customerservice {
     public customer findcustomer(int id) {
         if (customermap.containsKey(id)) {
             return customermap.get(id);
-        }else{
+        } else {
             System.out.println("no id found!");
             return null;
         }
 
+    }
+            public void saveCustomerstofile(){
+        try{
+            FileWriter writer= new FileWriter("customers.txt");
+            for(customer c: customer){
+                String Line= c.getcustomerid()+","+c.getname()+","+c.getnumber()+","+c.getaddress();
+                writer.write(Line);
+                writer.close();
             }
+
+
+        }catch(IOException e){
+            System.out.println("error saving file!");
+
+        }
+
+    }
         }

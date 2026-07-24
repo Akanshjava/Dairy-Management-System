@@ -26,7 +26,7 @@ public class customer {
         return number;
     }
 
-    public String address() {
+    public String getaddress() {
         return address;
     }
 

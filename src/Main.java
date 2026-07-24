@@ -12,6 +12,7 @@ public class Main {
         String number = sc.next();
         customerservice cs = new customerservice();
         customer c = cs.createcustomer(name, address, number);
+        cs.saveCustomerstofile();
 
         c.displayinfo();
         System.out.println("MORNING MILK: ");
